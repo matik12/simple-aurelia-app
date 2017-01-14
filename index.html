@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Aurelia App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="styles/main.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body aurelia-app="main">
+    <div class="splash">
+      <div class="message">Simple Aurelia App</div>
+      <span class="glyphicon glyphicon-refresh spinning"></span> 
+    </div>
+
+    <script src="jspm_packages/npm/bluebird@3.4.1/js/browser/bluebird.min.js"></script> 
+    <script src="jspm_packages/system.js"></script>
+    <script src="config.js"></script>
+    <script>
+      System.import('aurelia-bootstrapper');
+    </script>
+  </body>
+</html>

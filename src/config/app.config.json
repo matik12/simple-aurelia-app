@@ -1,0 +1,10 @@
+﻿{
+  "api": {
+    "url": "http://localhost:9000/",
+    "resource": {
+      "tests" : "tests"
+    }
+  },
+  "version": "1.0.0",
+  "debug": true
+}

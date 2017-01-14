@@ -1,0 +1,11 @@
+node_modules
+jspm_packages
+.idea
+.DS_STORE
+/dist
+/test/dist
+/test/unit/all-modules.spec.ts
+coverage
+/typings
+/export
+/styles/main.css
