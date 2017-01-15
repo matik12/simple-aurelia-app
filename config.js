@@ -223,7 +223,7 @@ System.config({
     ]
   },
   bundles: {
-    "app-build-864928fead.js": [
+    "app-build-89e697aa06.js": [
       "app.html!github:systemjs/plugin-text@0.0.8.js",
       "app.js",
       "home.html!github:systemjs/plugin-text@0.0.8.js",
