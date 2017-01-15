@@ -24,6 +24,7 @@ System.config({
     "bluebird": "npm:bluebird@3.4.1",
     "bootstrap-sass": "github:twbs/bootstrap-sass@3.3.7",
     "fetch": "github:github/fetch@1.1.1",
+    "jquery": "npm:jquery@2.2.4",
     "json": "github:systemjs/plugin-json@0.1.2",
     "text": "github:systemjs/plugin-text@0.0.8",
     "github:jspm/nodelibs-assert@0.1.0": {

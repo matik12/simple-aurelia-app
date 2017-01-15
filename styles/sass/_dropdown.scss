@@ -1,0 +1,21 @@
+.scrollable-dropdown-menu {
+    height: auto;
+    max-height: 210px;
+    overflow-x: hidden;
+}
+
+.dropdown, .dropup {
+    button {
+        text-align: left;
+        font-weight: bold;
+    }
+    span.caret {
+        margin-top: 7px;
+        margin-left: 10px;
+    }
+    img {
+        width: 21px;
+        margin-top: -3px;
+        margin-right: 3px;
+    }
+}

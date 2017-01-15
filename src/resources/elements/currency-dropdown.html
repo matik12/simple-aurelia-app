@@ -1,0 +1,20 @@
+<template>
+  <require from="../attributes/vertical-class-switcher"></require>
+  <div class="btn-group dropdown clearfix input-width-full" vertical-class-switcher="up: dropup; down: dropdown">
+    <button type="button" class="btn btn-input btn-default dropdown-toggle form-control" data-toggle="dropdown">
+      <img src="/images/${ selected.code }.png" alt="${selected.code}">
+      <span>${ selected.currency }</span>        
+      <span class="caret pull-right"></span>
+      <span class="pull-right">${ selected.code }</span>
+    </button>
+    <ul class="dropdown-menu scrollable-dropdown-menu input-width-full" role="menu">
+      <li repeat.for="currency of currencies" class="${ currency.code === selected.code ? 'active' : '' }">
+        <a href="javascript:void(0);" click.trigger="selected = currency">
+          <img src="/images/${ currency.code }.png" alt="${selected.code}">
+          <span>${ currency.currency }</span>
+          <span class="pull-right">${ currency.code }</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</template>

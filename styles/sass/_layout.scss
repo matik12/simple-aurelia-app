@@ -1,5 +1,11 @@
 body>.container {
-    padding: 60px 15px 0;
+    padding: 60px 15px 20px 15px;
+}
+
+@media screen and (max-width: 767px) {
+    body>.container {
+        padding-top: 25px;
+    }
 }
 
 .splash {
@@ -30,4 +36,17 @@ body>.container {
             transform: scale(1) rotate(360deg);
         }
     }
+}
+
+.fa {
+    &.fa-github {
+        content: url(/images/github.png);
+        width: 24px;
+        margin-bottom: -2px;
+        margin-right: -2px;
+    }
+}
+
+.input-width-full {
+    width: 100%;
 }

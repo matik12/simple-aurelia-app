@@ -1,9 +1,7 @@
 <template>
+  <require from="./resources/elements/currency-converter"></require>
   <div class="page-header">
-    <h2>Simple Aurelia App</h2>
+    <h2>Currency Converter</h2>
   </div>
-  <p class="lead">
-    Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar
-    has been added with padding-top: 60px; on the body &gt; .container.
-  </p>
+  <currency-converter rates.bind="currencyRates"></currency-converter>
 </template>

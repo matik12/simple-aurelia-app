@@ -1,4 +1,58 @@
-# simple-aurelia-app
+# What is simple-aurelia-app?
+
+- A simple SPA application based on Aurelia Skeleton using Typescript and JSPM (project setup includes few productivity improvements)
+- Contains component for converting 4 supported currencies: PLN, USD, GBP, EUR
+- Leverage api -> [http://api.nbp.pl/](http://api.nbp.pl/) to calculate money conversion
+
+Application demo can be found [here](http://webplayground.io/simple-aurelia-app/)!
+
+![App features](./docs/app.gif)
+
+# Responsive design
+
+Application is using Bootstrap to provide RWD. You can check app look and feel on different devices by entering very cool website [http://ami.responsivedesign.is/](http://ami.responsivedesign.is/)
+
+![Responsive design](./docs/responsive-design.png)
+
+# Jasmine JavaScript unit tests
+
+Source code includes a few sample jasmine unit tests and code coverage results available in the **coverage** folder, after running gulp test task (Karma runner).
+
+![Code coverage](./docs/code-coverage.png)
+
+# How to build & deploy app
+
+## Build
+
+Install project tools
+```shell
+npm install -g gulp jspm
+```
+
+Install all project dependencies - run command in root folder of the project 
+```shell
+npm install
+```
+## Run
+
+Run following command to start server and host app using BrowserSync. You can also use watch task for local development
+```shell
+gulp serve
+```
+
+## Deploy
+
+To deploy app to the server, first bundle dependencies and export all required files by running following command
+```shell
+gulp export --mergeConfig
+```
+Now you can simply deploy files from **export** folder to the host server. Website contains only static files.
+
+---
+
+# Development guide
+
+Below detail information was provided in Aurelia Skeleton app and is for development purposes and day-to-day workflow. 
 
 ## Running The App
 

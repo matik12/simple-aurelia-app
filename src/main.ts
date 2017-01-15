@@ -1,3 +1,4 @@
+import 'bootstrap-sass';
 import { Aurelia } from 'aurelia-framework';
 
 import config from 'config/app.config.json!json';

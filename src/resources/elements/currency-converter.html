@@ -1,0 +1,46 @@
+<template>
+  <require from="./currency-dropdown"></require>
+  <div class="row">
+    <div class="col-md-12">
+      <p><strong>Currency I Have</strong></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 col-sm-5 exchange-group">
+      <div class="row">
+        <div class="col-md-12">
+          <currency-dropdown currencies.bind="rates" selected.two-way="fromCurrency"></currency-dropdown>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="amountFrom">Amount:</label>
+            <input id="amountFrom" type="number" min="0" step="100" class="form-control" value.bind="fromAmount" keyup.delegate="fromChanged()"
+              change.delegate="fromChanged()">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1 col-sm-2 exchange-icon">
+      <span class="glyphicon glyphicon-triangle-left"></span>
+      <span class="glyphicon glyphicon-triangle-right"></span>
+    </div>
+    <div class="col-md-3 col-sm-5 exchange-group">
+      <div class="row">
+        <div class="col-md-12">
+          <currency-dropdown currencies.bind="rates" selected.two-way="toCurrency"></currency-dropdown>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="amountTo">Amount:</label>
+            <input id="amountTo" type="number" min="0" step="100" class="form-control" value.bind="toAmount" keyup.delegate="toChanged()"
+              change.delegate="toChanged()">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
