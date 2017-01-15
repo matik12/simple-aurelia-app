@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/matik12/simple-aurelia-app.svg?branch=master)](https://travis-ci.org/matik12/simple-aurelia-app)
+
 # What is simple-aurelia-app?
 
 - A simple SPA application based on Aurelia Skeleton using Typescript and JSPM (project setup includes few productivity improvements)
@@ -26,7 +28,7 @@ Source code includes a few sample jasmine unit tests and code coverage results a
 
 Install project tools
 ```shell
-npm install -g gulp jspm
+npm install -g gulp jspm typings
 ```
 
 Install all project dependencies - run command in root folder of the project 

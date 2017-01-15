@@ -22,6 +22,10 @@ gulp.task('test', ['build-test'], function (done) {
     options.reporters = ['junit', 'coverage', 'karma-remap-istanbul'];
   }
 
+  if (argv.travis) {
+    options.browsers = ['Chrome_travis_ci'];
+  }
+
   new Karma(options, (code) => {
     if (code == 1) {
       process.exit(1);

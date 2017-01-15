@@ -16,7 +16,9 @@ module.exports = function (config) {
           'es6-module-loader': 'node_modules/es6-module-loader/dist/es6-module-loader.js'
         },
         meta: {
-            'src/*': { format: 'register' }
+          'src/*': {
+            format: 'register'
+          }
         },
         packages: {
           'test/unit': {
@@ -68,14 +70,24 @@ module.exports = function (config) {
     },
     // optionally, configure the reporter
     coverageReporter: {
-      dir : 'coverage/',
-      reporters: [{ type: 'json', subdir: 'coverage' }]
+      dir: 'coverage/',
+      reporters: [{
+        type: 'json',
+        subdir: 'coverage'
+      }]
     },
     remapIstanbulReporter: {
       reports: {
         html: 'coverage',
         cobertura: 'coverage/cobertura.xml'
       }
-    }
+    },
+    //  Custom launcher for Travis-CI
+    customLaunchers: {
+      Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    },
   });
 };
