@@ -1,8 +1,8 @@
 {
 	"api": {
-		"url": "http://localhost:9000/",
+		"url": "http://api.nbp.pl/api/",
 		"resource": {
-			"tests": "tests"
+			"exchangeRates": "exchangerates/tables/"
 		}
 	},
 	"version": "1.0.0",

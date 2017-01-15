@@ -24,6 +24,7 @@ System.config({
     "bluebird": "npm:bluebird@3.4.1",
     "bootstrap-sass": "github:twbs/bootstrap-sass@3.3.7",
     "fetch": "github:github/fetch@1.1.1",
+    "jquery": "npm:jquery@2.2.4",
     "json": "github:systemjs/plugin-json@0.1.2",
     "text": "github:systemjs/plugin-text@0.0.8",
     "github:jspm/nodelibs-assert@0.1.0": {
@@ -194,20 +195,55 @@ System.config({
       "indexof": "npm:indexof@0.0.1"
     }
   },
+  depCache: {
+    "home.js": [
+      "aurelia-framework",
+      "aurelia-router",
+      "./services/exchange-rate-service"
+    ],
+    "main.js": [
+      "bootstrap-sass",
+      "config/app.config.json!json"
+    ],
+    "resources/attributes/vertical-class-switcher.js": [
+      "aurelia-framework"
+    ],
+    "resources/elements/currency-converter.js": [
+      "aurelia-framework"
+    ],
+    "resources/elements/currency-dropdown.js": [
+      "aurelia-framework",
+      "bootstrap-sass"
+    ],
+    "services/exchange-rate-service.js": [
+      "aurelia-framework",
+      "aurelia-fetch-client",
+      "fetch",
+      "config/app.config.json!json"
+    ]
+  },
   bundles: {
-    "app-build-19b7e733ab.js": [
+    "app-build-864928fead.js": [
       "app.html!github:systemjs/plugin-text@0.0.8.js",
       "app.js",
       "home.html!github:systemjs/plugin-text@0.0.8.js",
       "home.js",
       "main.js",
+      "resources/attributes/vertical-class-switcher.js",
+      "resources/elements/currency-converter.html!github:systemjs/plugin-text@0.0.8.js",
+      "resources/elements/currency-converter.js",
+      "resources/elements/currency-dropdown.html!github:systemjs/plugin-text@0.0.8.js",
+      "resources/elements/currency-dropdown.js",
+      "services/exchange-rate-service.js",
       "templates/nav-bar.html!github:systemjs/plugin-text@0.0.8.js",
       "templates/unexpected-error/unexpected-error.html!github:systemjs/plugin-text@0.0.8.js",
       "templates/unexpected-error/unexpected-error.js"
     ],
-    "lib-build-880d27112b.js": [
+    "lib-build-9bc7c2160b.js": [
       "github:github/fetch@1.1.1.js",
       "github:github/fetch@1.1.1/fetch.js",
+      "github:twbs/bootstrap-sass@3.3.7.js",
+      "github:twbs/bootstrap-sass@3.3.7/assets/javascripts/bootstrap.js",
       "npm:aurelia-animator-css@1.0.1.js",
       "npm:aurelia-animator-css@1.0.1/aurelia-animator-css.js",
       "npm:aurelia-binding@1.1.1.js",
@@ -291,11 +327,6 @@ System.config({
       "npm:aurelia-templating-router@1.0.1/router-view.js",
       "npm:aurelia-templating@1.2.0.js",
       "npm:aurelia-templating@1.2.0/aurelia-templating.js"
-    ]
-  },
-  depCache: {
-    "main.js": [
-      "config/app.config.json!json"
     ]
   }
 });

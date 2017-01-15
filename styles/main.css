@@ -5732,7 +5732,11 @@ button.close {
     display: none !important; } }
 
 body > .container {
-  padding: 60px 15px 0; }
+  padding: 60px 15px 20px 15px; }
+
+@media screen and (max-width: 767px) {
+  body > .container {
+    padding-top: 25px; } }
 
 .splash {
   text-align: center;
@@ -5757,3 +5761,50 @@ body > .container {
     transform: scale(1) rotate(0deg); }
   to {
     transform: scale(1) rotate(360deg); } }
+
+.fa.fa-github {
+  content: url(/images/github.png);
+  width: 24px;
+  margin-bottom: -2px;
+  margin-right: -2px; }
+
+.input-width-full {
+  width: 100%; }
+
+.scrollable-dropdown-menu {
+  height: auto;
+  max-height: 210px;
+  overflow-x: hidden; }
+
+.dropdown button, .dropup button {
+  text-align: left;
+  font-weight: bold; }
+
+.dropdown span.caret, .dropup span.caret {
+  margin-top: 7px;
+  margin-left: 10px; }
+
+.dropdown img, .dropup img {
+  width: 21px;
+  margin-top: -3px;
+  margin-right: 3px; }
+
+.exchange-icon {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 10px; }
+  .exchange-icon .glyphicon-triangle-left {
+    margin-right: -8px; }
+  .exchange-icon .glyphicon-triangle-right {
+    margin-left: -8px; }
+
+@media screen and (min-width: 768px) {
+  .exchange-icon {
+    margin-top: 40px; } }
+
+.exchange-group .form-group {
+  margin-top: 15px; }
+  .exchange-group .form-group input {
+    font-size: 18px;
+    font-weight: bold;
+    color: orange; }
