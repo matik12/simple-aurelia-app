@@ -5792,7 +5792,8 @@ body > .container {
 .exchange-icon {
   font-size: 28px;
   text-align: center;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  cursor: pointer; }
   .exchange-icon .glyphicon-triangle-left {
     margin-right: -8px; }
   .exchange-icon .glyphicon-triangle-right {
