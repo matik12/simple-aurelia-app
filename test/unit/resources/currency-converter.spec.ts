@@ -4,7 +4,9 @@ describe('Currency Converter element', () => {
     let currencyConverter: CurrencyConverter;
     const rates = [
         { code: 'code1', currency: 'curr 1', mid: 1 },
-        { code: 'code2', currency: 'curr 2', mid: 2 }
+        { code: 'code2', currency: 'curr 2', mid: 2 },
+        { code: 'PLN', currency: 'PL', mid: 1 },
+        { code: 'EUR', currency: 'EUR', mid: 4.3771 }
     ];
 
     beforeEach(() => {
@@ -99,6 +101,65 @@ describe('Currency Converter element', () => {
 
         // assert
         expect(currencyConverter.fromAmount).toBe(expectedFromAmount.toString());
+        done();
+    });
+
+    it('should switch fromCurrency and toCurrency when switchCurrencies invoked', (done) => {
+        // arrange
+        const fakeFromAmount = 100;
+        currencyConverter.rates = rates;
+        currencyConverter.fromCurrency = rates[0];
+        currencyConverter.fromAmount = fakeFromAmount.toString();
+        currencyConverter.toCurrency = rates[1];
+        currencyConverter.toAmount = undefined;
+
+        // act
+        currencyConverter.switchCurrencies();
+
+        // assert
+        expect(currencyConverter.fromCurrency).toBe(rates[1]);
+        expect(currencyConverter.toCurrency).toBe(rates[0]);
+        expect(currencyConverter.toAmount).toBeDefined();
+        done();
+    });
+
+    it('should calculate proper value after rounding fromAmount value when toChanged invoked and toAmount has decimal point', (done) => {
+        // arrange
+        const decimalToAmount = '22.83';
+        const expectedFromAmount = '100';
+        currencyConverter.rates = rates;
+        currencyConverter.fromCurrency = rates[2];
+        currencyConverter.fromAmount = undefined;
+        currencyConverter.toCurrency = rates[3];
+        currencyConverter.toAmount = decimalToAmount;
+
+        // act
+        currencyConverter.toChanged();
+
+        // assert
+        expect(currencyConverter.fromAmount).toBe(expectedFromAmount);
+        done();
+    });
+
+    it('should calculate same inital value fro fromAmount when fromChanged and then toChanged invoked', (done) => {
+        // arrange
+        const fromAmount = '100';
+        const expectedFromAmount = '100';
+        currencyConverter.rates = rates;
+        currencyConverter.fromCurrency = rates[2];
+        currencyConverter.fromAmount = fromAmount;
+        currencyConverter.toCurrency = rates[3];
+        currencyConverter.toAmount = undefined;
+
+        // act
+        currencyConverter.fromChanged();
+        const toAmount = currencyConverter.toAmount;
+        currencyConverter.toChanged();
+
+        // assert
+        expect(currencyConverter.fromAmount).toBe(expectedFromAmount);
+        expect(currencyConverter.toAmount).toBeDefined();
+        expect(currencyConverter.toAmount).toBe(toAmount);
         done();
     });
 });

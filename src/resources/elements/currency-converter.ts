@@ -19,6 +19,10 @@ export class CurrencyConverter {
             this.fromCurrency = this.rates[0];
             this.toCurrency = this.rates[1];
         }
+
+        this.rates.forEach(r => {
+            r.mid = +this.toFixedValue(r.mid);
+        });
      }
 
     fromChanged() {
@@ -37,6 +41,17 @@ export class CurrencyConverter {
 
         const newAmount = +this.toAmount * (this.toCurrency.mid / this.fromCurrency.mid);
         this.fromAmount = this.toFixedValue(newAmount);
+    }
+
+    switchCurrencies() {
+        const oldFromCurrency = this.fromCurrency;
+        const oldFromAmmount = this.fromAmount;
+
+        this.fromCurrency = this.toCurrency;
+        this.toCurrency = oldFromCurrency;
+
+        this.fromAmount = oldFromAmmount;
+        this.fromChanged();
     }
 
     private toFixedValue(value: number): string {
