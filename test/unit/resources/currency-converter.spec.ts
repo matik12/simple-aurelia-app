@@ -141,7 +141,7 @@ describe('Currency Converter element', () => {
         done();
     });
 
-    it('should calculate same inital value fro fromAmount when fromChanged and then toChanged invoked', (done) => {
+    it('should calculate same inital value for fromAmount when fromChanged and then toChanged invoked', (done) => {
         // arrange
         const fromAmount = '100';
         const expectedFromAmount = '100';

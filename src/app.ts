@@ -7,7 +7,12 @@ export class App {
         config.title = 'Simple Aurelia App';
         config.map([
             { route: '', name: 'home', moduleId: 'home', title: 'Home' },
-            { route: 'unexpected-error', name: 'unexpected-error', moduleId: 'templates/unexpected-error/unexpected-error', title: 'Unexpected error' }
+            {
+                route: 'unexpected-error',
+                name: 'unexpected-error',
+                moduleId: 'templates/unexpected-error/unexpected-error',
+                title: 'Unexpected error'
+            }
         ]);
 
         this.router = router;

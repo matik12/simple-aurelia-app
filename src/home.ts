@@ -1,5 +1,5 @@
 import { autoinject } from 'aurelia-framework';
-import { Router } from 'aurelia-router';
+import { RedirectToRoute } from 'aurelia-router';
 
 import ExchangeRateService from './services/exchange-rate-service';
 
@@ -15,6 +15,7 @@ export class Home {
         {
             code: 'USD',
             currency: 'US Dollar'
+            // i.e. mid: 4.0302
         },
         {
             code: 'GBP',
@@ -26,16 +27,14 @@ export class Home {
         }
     ];
 
-    constructor(private exchangeRateService: ExchangeRateService, private router: Router) { }
+    constructor(private exchangeRateService: ExchangeRateService) { }
 
     activate() {
         // Aurelia best practise: use activate to get required data for particular view and 
         // always return promise to tell aurelia router to wait until data arrives 
         return this.exchangeRateService.getCurrentExchangeRates()
             .then(rateTable => this.mapCurrentRateValues(rateTable.rates))
-            .catch(() => {
-                this.router.navigateToRoute('unexpected-error');
-            });
+            .catch(() => Promise.reject(new RedirectToRoute('unexpected-error')));
     }
 
     private mapCurrentRateValues(rates: Rate[]) {
