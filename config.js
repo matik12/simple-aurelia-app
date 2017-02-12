@@ -202,6 +202,7 @@ System.config({
       "./services/exchange-rate-service"
     ],
     "main.js": [
+      "jquery",
       "bootstrap-sass",
       "config/app.config.json!json"
     ],
@@ -223,7 +224,7 @@ System.config({
     ]
   },
   bundles: {
-    "app-build-787e3e6e21.js": [
+    "app-build-6dfa7b5bfa.js": [
       "app.html!github:systemjs/plugin-text@0.0.8.js",
       "app.js",
       "home.html!github:systemjs/plugin-text@0.0.8.js",
@@ -239,7 +240,7 @@ System.config({
       "templates/unexpected-error/unexpected-error.html!github:systemjs/plugin-text@0.0.8.js",
       "templates/unexpected-error/unexpected-error.js"
     ],
-    "lib-build-9bc7c2160b.js": [
+    "lib-build-d45b5adf08.js": [
       "github:github/fetch@1.1.1.js",
       "github:github/fetch@1.1.1/fetch.js",
       "github:twbs/bootstrap-sass@3.3.7.js",
@@ -326,7 +327,9 @@ System.config({
       "npm:aurelia-templating-router@1.0.1/route-loader.js",
       "npm:aurelia-templating-router@1.0.1/router-view.js",
       "npm:aurelia-templating@1.2.0.js",
-      "npm:aurelia-templating@1.2.0/aurelia-templating.js"
+      "npm:aurelia-templating@1.2.0/aurelia-templating.js",
+      "npm:jquery@2.2.4.js",
+      "npm:jquery@2.2.4/dist/jquery.js"
     ]
   }
 });
