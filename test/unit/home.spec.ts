@@ -1,17 +1,14 @@
 import { Home } from 'src/home';
 import ExchangeRateService from 'src/services/exchange-rate-service';
-import { Router } from 'aurelia-router';
 
 describe('Home page', () => {
     let home: Home;
     let exchangeRateService: ExchangeRateService;
-    let router: Router;
 
     beforeEach(() => {
         exchangeRateService = jasmine.createSpyObj('ExchangeRateService', ['getCurrentExchangeRates']);
-        router = jasmine.createSpyObj('Router', ['navigateToRoute']);
 
-        home = new Home(exchangeRateService, router);
+        home = new Home(exchangeRateService);
     });
 
     it('should set all 4 supported currency rates: PLN, USD, GBP, EUR', (done) => {
@@ -34,7 +31,7 @@ describe('Home page', () => {
         // arrange
         (<jasmine.Spy>exchangeRateService.getCurrentExchangeRates).and.callFake(() => {
             return new Promise(resolve => {
-                resolve({});
+                resolve({ rates: [] });
             });
         });
 
@@ -57,10 +54,10 @@ describe('Home page', () => {
         });
 
         // act
-        home.activate().then(result => {
+        home.activate().catch((result: any) => {
 
             // assert
-            expect(router.navigateToRoute).toHaveBeenCalledWith(errorRoute);
+            expect(result.route).toBe(errorRoute);
             done();
         });
     });
