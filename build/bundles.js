@@ -28,6 +28,7 @@ module.exports = {
         "aurelia-history-browser",
         "aurelia-logging-console",
         "fetch",
+        "jquery",
         "bootstrap-sass"
       ],
       "options": {

@@ -12,7 +12,6 @@ module.exports = {
     'jspm_packages/system-csp-production.js',
     'jspm_packages/github/systemjs/plugin-json@0.1.2.js',
     'jspm_packages/github/systemjs/plugin-json@0.1.2/*.js',
-    'jspm_packages/npm/jquery@2.2.4/dist/jquery.min.js',
     'styles/main.css'
   ],
   // this section lists any jspm packages that have

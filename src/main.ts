@@ -1,3 +1,4 @@
+import 'jquery';
 import 'bootstrap-sass';
 import { Aurelia } from 'aurelia-framework';
 
